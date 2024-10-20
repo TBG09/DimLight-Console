@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.learn.java"
-version = "1.0.0"
+version = "1.0.0.0010"
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ dependencies {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "Main"
+        attributes["Main-Class"] = "rsbdp.Core.Main"
     }
 }
 

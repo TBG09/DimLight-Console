@@ -1,6 +1,7 @@
 package rsbdp.Core;
 
-import Learn.Logger;
+
+import rsbdp.Logger;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -27,6 +28,10 @@ public class IOHandler {
             } catch (IOException e) {
                 Logger.fatal("IOHandler", "An error occurred while trying to create your file: " + e);
             }
+        }
+
+        public void CreateDirectory(String DirectoryPath) throws IOException {
+            Files.createDirectories(Path.of(DirectoryPath));
         }
 
         public int LineCount(String filePath) {
