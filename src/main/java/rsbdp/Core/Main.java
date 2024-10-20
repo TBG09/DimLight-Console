@@ -9,6 +9,11 @@ public class Main {
         StartupJobs.main();
 
         System.out.println("rsbdp console - " + PublicVariables.VersionNum);
+        if (PublicVariables.LinuxDistro == "Unknown Linux Distro" && PublicVariables.osType.toLowerCase().contains("win")) {
+            System.out.println("Running on " + PublicVariables.osType);
+        } else {
+            System.out.println("Running on " + PublicVariables.LinuxDistro);
+        }
         System.out.println("Welcome!");
 
 
