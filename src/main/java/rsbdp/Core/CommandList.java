@@ -1,5 +1,6 @@
 package rsbdp.Core;
 
+import java.io.Console;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -16,6 +17,10 @@ public class CommandList {
         commandMap.put("echo", echo::main);
         commandMap.put("getvar", getvar::main);
         commandMap.put("help", help::main);
+        commandMap.put("hlp", help::main);
+        commandMap.put("log", log::main);
+        commandMap.put("cls", ConsoleManagement::clearConsole);
+        commandMap.put("clear", ConsoleManagement::clearConsole);
     }
 
     // Method to execute a command based on input

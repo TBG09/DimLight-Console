@@ -4,7 +4,7 @@ import java.io.File;
 
 public class PublicVariables {
 
-    public static String VersionNum = "1.0.0.0010";
+    public static String VersionNum = "1.0.0.0012";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");

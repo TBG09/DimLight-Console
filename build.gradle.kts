@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.learn.java"
-version = "1.0.0.0010"
+version = "1.0.0.0012"
 
 repositories {
     mavenCentral()
