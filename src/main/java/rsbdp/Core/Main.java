@@ -1,11 +1,13 @@
 package rsbdp.Core;
 
+import rsbdp.CoreFunc.FileFormat;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         StartupJobs.main();
 
         System.out.println("rsbdp console - " + PublicVariables.VersionNum);
@@ -23,7 +25,7 @@ public class Main {
 
     }
 
-    public static void UserInput() {
+    public static void UserInput() throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.print(PublicVariables.currentDirectory + " >");
         String[] inputParts = scanner.nextLine().split(" ", 2);
@@ -31,7 +33,7 @@ public class Main {
 
 
         if (command.toLowerCase().contains(".rsbdp".toLowerCase())) {
-
+            FileFormat.main(new String[]{command});
         } else {
             String arguments = inputParts.length > 1 ? inputParts[1] : "";
             CommandList commandList = new CommandList();

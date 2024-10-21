@@ -22,10 +22,11 @@ public class CommandList {
         commandMap.put("cls", ConsoleManagement::clearConsole);
         commandMap.put("clear", ConsoleManagement::clearConsole);
         commandMap.put("polarfetch", polarfetch::main);
+        commandMap.put("wait", wait::main);
     }
 
     // Method to execute a command based on input
-    public void executeCommand(String command, String argument) {
+    public void executeCommand(String command, String argument) throws Exception {
         Consumer<String> action = commandMap.get(command.toLowerCase());
         if (action != null) {
             action.accept(argument);  // Pass the argument to the command
