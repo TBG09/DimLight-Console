@@ -21,6 +21,7 @@ public class CommandList {
         commandMap.put("log", log::main);
         commandMap.put("cls", ConsoleManagement::clearConsole);
         commandMap.put("clear", ConsoleManagement::clearConsole);
+        commandMap.put("polarfetch", polarfetch::main);
     }
 
     // Method to execute a command based on input

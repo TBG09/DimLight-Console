@@ -27,7 +27,7 @@ public class ConsoleManagement {
 
     public  void main(String[] args) {
 
-        clearConsole("why");
+        clearConsole("why: idk");
         Logger.info("ConsoleManagement","Cleared Console!");
     }
 }
