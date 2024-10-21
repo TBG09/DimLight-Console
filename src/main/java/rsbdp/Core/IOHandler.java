@@ -13,6 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class IOHandler {
 
@@ -20,13 +22,24 @@ public class IOHandler {
         File myObj;
         File myObj2;
 
-        public void create(String objectName) {
+        public void createFile(String objectName) {
             try {
                 myObj = new File(objectName); // Initialize myObj properly
                 if (myObj.createNewFile())
                     Logger.info("IOHandler", "File " + objectName + " Created Successfully! :D");
             } catch (IOException e) {
                 Logger.fatal("IOHandler", "An error occurred while trying to create your file: " + e);
+            }
+        }
+
+        public List<String> readLines(String filePath) {
+            try {
+                return Files.readAllLines(Paths.get(filePath)).stream()
+                        .filter(line -> !line.trim().isEmpty() && !line.trim().startsWith("//") && !line.trim().startsWith("#"))
+                        .collect(Collectors.toList());
+            } catch (IOException e) {
+                e.printStackTrace();
+                return List.of();
             }
         }
 
@@ -48,25 +61,6 @@ public class IOHandler {
             return lineCount;  // Return the total line count
         }
 
-        public String LineStringGet(String file, Integer line) {
-            String result = null;
-            int currentLine = 0;
-
-            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-                String currentLineContent;
-                while ((currentLineContent = br.readLine()) != null) {
-                    currentLine++;
-                    if (currentLine == line) {
-                        result = currentLineContent;
-                        break;
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return result; // UwU (please ignore this lol)
-        }
 
         public String readContents(String filePath) {
             StringBuilder content = new StringBuilder(); // Use StringBuilder to accumulate file contents

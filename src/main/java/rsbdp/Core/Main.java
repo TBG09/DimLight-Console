@@ -28,9 +28,15 @@ public class Main {
         System.out.print(PublicVariables.currentDirectory + " >");
         String[] inputParts = scanner.nextLine().split(" ", 2);
         String command = inputParts[0];
-        String arguments = inputParts.length > 1 ? inputParts[1] : "";
-        CommandList commandList = new CommandList();
-        commandList.executeCommand(command, arguments);
+
+
+        if (command.toLowerCase().contains(".rsbdp".toLowerCase())) {
+
+        } else {
+            String arguments = inputParts.length > 1 ? inputParts[1] : "";
+            CommandList commandList = new CommandList();
+            commandList.executeCommand(command, arguments);
+        }
     }
 
 }
