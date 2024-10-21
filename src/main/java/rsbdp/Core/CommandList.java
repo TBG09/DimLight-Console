@@ -35,4 +35,15 @@ public class CommandList {
             Main.UserInput();
         }
     }
+    // Some method to handle commands in a different way
+    public void executeCommand2(String command, String argument) {
+        Consumer<String> action = commandMap.get(command.toLowerCase());
+        if (action != null) {
+            action.accept(argument);  // Pass the argument to the command
+
+        } else {
+            System.out.println("Unknown command: " + command);
+
+        }
+    }
 }
