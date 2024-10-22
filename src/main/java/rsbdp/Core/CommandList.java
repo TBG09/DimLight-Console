@@ -13,7 +13,7 @@ public class CommandList {
     public CommandList() {
         commandMap = new HashMap<>();
 
-        // Add commands and their corresponding actions
+        // Register commands here
         commandMap.put("echo", echo::main);
         commandMap.put("getvar", getvar::main);
         commandMap.put("help", help::main);
@@ -23,6 +23,15 @@ public class CommandList {
         commandMap.put("clear", ConsoleManagement::clearConsole);
         commandMap.put("polarfetch", polarfetch::main);
         commandMap.put("wait", wait::main);
+        commandMap.put("cd", cd::main);
+        commandMap.put("dir", dir::main);
+        commandMap.put("mkdir", mkdir::main);
+        commandMap.put("pwd", pwd::main);
+        commandMap.put("rename", rename::main);
+        commandMap.put("ren", rename::main);
+        commandMap.put("rm", rm::main);
+        commandMap.put("remove", rm::main);
+        commandMap.put("ls", dir::main);
     }
 
     // Method to execute a command based on input

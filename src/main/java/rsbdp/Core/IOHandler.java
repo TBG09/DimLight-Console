@@ -110,6 +110,27 @@ public class IOHandler {
             }
         }
 
+        public void listDirContents(String objectName) {
+            File[] files = new File(objectName).listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    String size = getFormattedSize(file.length());
+                    System.out.println(file.getName() + " - " + size);
+                }
+            } else {
+                System.out.println("The directory " + objectName + " is empty or does not exist.");
+            }
+        }
+
+        private String getFormattedSize(long size) {
+            if (size <= 0) return "0 B";
+            String[] units = new String[]{"B", "KB", "MB", "GB", "TB"};
+            int unitIndex = (int) (Math.log10(size) / 3);
+            double formattedSize = size / Math.pow(1024, unitIndex);
+            return String.format("%.2f %s", formattedSize, units[unitIndex]);
+        }
+
+
         public void delete(String objectName) {
             try {
                 myObj = new File(objectName);
