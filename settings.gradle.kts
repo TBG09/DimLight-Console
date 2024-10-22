@@ -1,2 +1,2 @@
-rootProject.name = "rs"
+rootProject.name = "DimLight-Console"
 
