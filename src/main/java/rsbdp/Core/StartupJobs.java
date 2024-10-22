@@ -10,6 +10,7 @@ public class StartupJobs {
 
     public static void main() throws IOException {
         IOHandler.IO io = new IOHandler.IO();
+        HardwareHandler hardwareH = new HardwareHandler();
 
         io.FileExists("." + PublicVariables.SeperatorOSType + "logs");
         if (io.FileExists("logs")) {
