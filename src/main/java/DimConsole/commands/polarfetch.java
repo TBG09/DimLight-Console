@@ -1,9 +1,8 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Core.CommandList;
+import DimConsole.Core.CommandList;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
-import oshi.hardware.GraphicsCard;
 
 public class polarfetch {
     public static void main(String arguementThatIsntLoved) {

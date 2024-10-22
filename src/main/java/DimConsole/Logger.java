@@ -1,4 +1,4 @@
-package rsbdp;
+package DimConsole;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

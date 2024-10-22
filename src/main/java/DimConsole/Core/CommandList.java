@@ -1,10 +1,9 @@
-package rsbdp.Core;
+package DimConsole.Core;
 
-import java.io.Console;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
-import rsbdp.commands.*;
+import DimConsole.commands.*;
 
 public class CommandList {
 

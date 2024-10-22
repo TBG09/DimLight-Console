@@ -1,7 +1,7 @@
-package rsbdp.Core;
+package DimConsole.Core;
 
-import rsbdp.Logger;
-import rsbdp.System.PublicVariables;
+import DimConsole.Logger;
+import DimConsole.System.PublicVariables;
 
 import java.io.IOException;
 

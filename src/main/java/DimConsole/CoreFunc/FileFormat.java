@@ -1,13 +1,12 @@
-package rsbdp.CoreFunc;
+package DimConsole.CoreFunc;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import rsbdp.Core.CommandList;
-import rsbdp.Core.Main;
-import rsbdp.Logger;
+import DimConsole.Core.CommandList;
+import DimConsole.Core.Main;
 
 public class FileFormat {
     private static final Map<String, Object> variables = new HashMap<>(); // To store variables

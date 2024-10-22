@@ -1,7 +1,6 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Core.IOHandler;
-import rsbdp.Logger;
+import DimConsole.Core.IOHandler;
 
 public class rm {
     public static void main(String ObjectRemove) {

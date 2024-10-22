@@ -1,6 +1,6 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Logger;
+import DimConsole.Logger;
 
 public class log {
     public static void main(String arguments) {

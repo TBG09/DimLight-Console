@@ -1,4 +1,4 @@
-package rsbdp.System;
+package DimConsole.System;
 
 import java.io.BufferedReader;
 import java.io.File;
