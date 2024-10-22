@@ -2,7 +2,7 @@ package rsbdp.Core;
 
 import rsbdp.LogFile;
 import rsbdp.Logger;
-import rsbdp.modLoading.ModdingEngine;
+import rsbdp.System.PublicVariables;
 
 import java.io.IOException;
 
@@ -13,7 +13,6 @@ public class StartupJobs {
 
         io.FileExists("." + PublicVariables.SeperatorOSType + "logs");
         if (io.FileExists("logs")) {
-            // Nothing
         } else {
             Logger.info("StartupJobs", "logs folder doesn't exist, creating.");
             io.CreateDirectory("logs");
@@ -22,6 +21,5 @@ public class StartupJobs {
 
 
         LogFile.setupLogging();
-        ModdingEngine.setupModding();
     }
 }

@@ -1,6 +1,6 @@
 package rsbdp.commands;
 
-import rsbdp.Core.PublicVariables;
+import rsbdp.System.PublicVariables;
 
 import java.lang.reflect.Field;
 

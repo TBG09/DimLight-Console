@@ -1,7 +1,7 @@
 package rsbdp.commands;
 
 import rsbdp.Core.IOHandler;
-import rsbdp.Core.PublicVariables;
+import rsbdp.System.PublicVariables;
 
 public class dir {
     public static void main(String Directory) {

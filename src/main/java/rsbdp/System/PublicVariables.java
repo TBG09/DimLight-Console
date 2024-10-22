@@ -1,4 +1,4 @@
-package rsbdp.Core;
+package rsbdp.System;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PublicVariables {
-    public static String VersionNum = "1.0.0.0030";
+    public static String VersionNum = "1.0.0.0030-jdk17";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");

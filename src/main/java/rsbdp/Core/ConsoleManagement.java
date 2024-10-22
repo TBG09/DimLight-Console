@@ -1,6 +1,7 @@
 package rsbdp.Core;
 
 import rsbdp.Logger;
+import rsbdp.System.PublicVariables;
 
 import java.io.IOException;
 

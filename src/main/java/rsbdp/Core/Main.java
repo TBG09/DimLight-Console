@@ -1,8 +1,8 @@
 package rsbdp.Core;
 
 import rsbdp.CoreFunc.FileFormat;
+import rsbdp.System.PublicVariables;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +13,8 @@ public class Main {
         System.out.println("rsbdp console - " + PublicVariables.VersionNum);
         if (PublicVariables.LinuxDistro == "Unknown Linux Distro" && PublicVariables.osType.toLowerCase().contains("win")) {
             System.out.println("Running on " + PublicVariables.osType);
+        } else if (PublicVariables.runningOnTermux){
+           System.out.println("Running on termux with Linux " + PublicVariables.osVersion);
         } else {
             System.out.println("Running on " + PublicVariables.LinuxDistro);
         }
