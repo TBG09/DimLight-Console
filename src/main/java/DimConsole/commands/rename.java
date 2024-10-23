@@ -1,6 +1,6 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Core.IOHandler;
+import DimConsole.Core.IOHandler;
 
 public class rename {
     public static void main(String ObjectRename) {

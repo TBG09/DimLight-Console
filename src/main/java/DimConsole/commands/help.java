@@ -1,4 +1,4 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
 public class help {
     public static void main(String argumentThingThatIsNeverUsed) {

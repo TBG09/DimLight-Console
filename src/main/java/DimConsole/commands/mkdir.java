@@ -1,9 +1,6 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Core.IOHandler;
-import rsbdp.Logger;
-
-import java.io.IOException;
+import DimConsole.Core.IOHandler;
 
 public class mkdir {
    public static void main(String FolderName) {

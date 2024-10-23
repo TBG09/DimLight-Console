@@ -1,6 +1,6 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Logger;
+import DimConsole.Logger;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
 public class echo {
 

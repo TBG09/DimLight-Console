@@ -1,7 +1,7 @@
-package rsbdp.Core;
+package DimConsole.Core;
 
 
-import rsbdp.Logger;
+import DimConsole.Logger;
 
 import java.io.File;
 import java.io.FileWriter;

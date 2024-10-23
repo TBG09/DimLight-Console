@@ -1,6 +1,6 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.System.PublicVariables;
+import DimConsole.System.PublicVariables;
 
 import java.lang.reflect.Field;
 

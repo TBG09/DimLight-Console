@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.learn.java"
-version = "1.0.0.0032"
+version = "1.0.0.0034"
 
 repositories {
     mavenCentral()
@@ -12,12 +12,15 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation ("com.github.oshi:oshi-core:6.4.2")
+    implementation("net.java.dev.jna:jna:5.15.0")
+    implementation("net.java.dev.jna:jna-platform:5.15.0")
+
+
 }
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "rsbdp.Core.Main"
+        attributes["Main-Class"] = "DimConsole.Core.Main"
     }
 }
 

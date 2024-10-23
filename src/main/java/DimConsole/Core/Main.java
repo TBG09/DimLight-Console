@@ -1,7 +1,7 @@
-package rsbdp.Core;
+package DimConsole.Core;
 
-import rsbdp.CoreFunc.FileFormat;
-import rsbdp.System.PublicVariables;
+import DimConsole.CoreFunc.FileFormat;
+import DimConsole.System.PublicVariables;
 
 import java.util.Scanner;
 

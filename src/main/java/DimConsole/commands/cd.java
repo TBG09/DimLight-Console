@@ -1,7 +1,7 @@
-package rsbdp.commands;
+package DimConsole.commands;
 
-import rsbdp.Core.IOHandler;
-import rsbdp.System.PublicVariables;
+import DimConsole.Core.IOHandler;
+import DimConsole.System.PublicVariables;
 
 import java.io.File;
 
