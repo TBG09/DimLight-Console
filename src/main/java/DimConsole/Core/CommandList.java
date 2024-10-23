@@ -31,6 +31,8 @@ public class CommandList {
         commandMap.put("rm", rm::main);
         commandMap.put("remove", rm::main);
         commandMap.put("ls", dir::main);
+        commandMap.put("net", net::main);
+        commandMap.put("network", net::main);
     }
 
     // Method to execute a command based on input

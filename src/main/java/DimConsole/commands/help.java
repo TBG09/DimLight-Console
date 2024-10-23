@@ -14,7 +14,8 @@ public class help {
                 pwd - Displays the current directory path.
                 rename or ren - renames the specified file.
                 rm or remove - removes the folder or file.
-                wait <seconds> - waits the amount of seconds given.""");
+                wait <seconds> - waits the amount of seconds given.
+                net <sub command> - do net help if you want help lol.""");
     }
 
 }

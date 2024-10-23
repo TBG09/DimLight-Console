@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class  PublicVariables {
 
-    public static String VersionNum = "1.0.0.0034";
+    public static String VersionNum = "1.0.0.0038";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");
@@ -17,12 +17,12 @@ public class  PublicVariables {
     public static boolean runningOnTermux = isRunningOnTermux();
     public static String ResourcePath = "resources";
     public static String SeperatorOSType = SeperatorType();
-    public static String totalMemoryGB = String.valueOf(Runtime.getRuntime().totalMemory() / (1024 * 1024 * 1024));
-    public static String totalMemoryMB = String.valueOf(Runtime.getRuntime().totalMemory() / (1024 * 1024));
-    public static String totalMemoryKB = String.valueOf(Runtime.getRuntime().totalMemory());
-    public static String AvailableMemoryMB = String.valueOf(Hardware.AvailableMemoryMB);
+    public static String totalMemoryGB = String.valueOf((long) Runtime.getRuntime().totalMemory() / (1024 * 1024 * 1024));
+    public static String totalMemoryMB = String.valueOf((long) Runtime.getRuntime().totalMemory() / (1024 * 1024));
+    public static String totalMemoryKB = String.valueOf((long) Runtime.getRuntime().totalMemory());
     public static String currentDirectory = System.getProperty("user.dir");
     public static String LinuxDistro = getLinuxDistro();
+
 
 
     private static boolean isRunningOnTermux() {
