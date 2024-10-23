@@ -1,5 +1,6 @@
 plugins {
-    id("java")
+    java
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "org.learn.java"
@@ -12,8 +13,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-
-
+    implementation("com.github.oshi:oshi-core:6.6.5")
 }
 
 tasks.jar {
@@ -24,4 +24,8 @@ tasks.jar {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveClassifier.set("all")
 }
