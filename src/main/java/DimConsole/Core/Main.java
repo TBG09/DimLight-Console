@@ -35,7 +35,7 @@ public class Main {
         String command = inputParts[0];
 
 
-        if (command.toLowerCase().contains(".rsbdp".toLowerCase())) {
+        if (command.toLowerCase().contains(".dimc".toLowerCase())) {
             FileFormat.main(new String[]{command});
         } else {
             String arguments = inputParts.length > 1 ? inputParts[1] : "";
