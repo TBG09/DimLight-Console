@@ -1,5 +1,7 @@
 package DimConsole;
 
+import DimConsole.CoreFunc.Config;
+
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,7 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class LogFile {
-    public static final String LOG_DIRECTORY = "logs";
+    public static final String LOG_DIRECTORY = Config.LogDir;
     public static final String LOG_FILE_PREFIX = "log_";
     public static final String LOG_FILE_SUFFIX = ".log";
     public static final long UPDATE_INTERVAL_MS = 300; // 0.3 seconds
@@ -18,7 +20,7 @@ public class LogFile {
     public static StringBuilder currentInput = new StringBuilder();
     public static ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
-
+    private static PrintStream logStream; // To keep track of the log stream
 
     public static void setupLogging() {
         try {
@@ -37,7 +39,7 @@ public class LogFile {
             originalErr = System.err;
 
             // Redirect System.out and System.err to the log file
-            PrintStream logStream = new PrintStream(new FileOutputStream(logFile, true), true);
+            logStream = new PrintStream(new FileOutputStream(logFile, true), true);
             System.setOut(new PrintStream(new MultiOutputStream(System.out, logStream), true));
             System.setErr(new PrintStream(new MultiOutputStream(System.err, logStream), true));
 
@@ -61,6 +63,37 @@ public class LogFile {
             }
         }, 0, UPDATE_INTERVAL_MS, TimeUnit.MILLISECONDS);
     }
+
+    // Logging methods with hidden log support, now accepting a source parameter
+    public static void Hinfo(String source, String message) {
+        log(source, "INFO", message);
+    }
+
+    public static void Hwarn(String source, String message) {
+        log(source, "WARN", message);
+    }
+
+    public static void Herror(String source, String message) {
+        log(source, "ERROR", message);
+    }
+
+    public static void Hfatal(String source, String message) {
+        log(source, "FATAL", message);
+    }
+
+    public static void Hdebug(String source, String message) {
+        log(source, "DEBUG", message);
+    }
+
+    // Centralized logging method with source parameter
+    private static void log(String source, String level, String message) {
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        String logEntry = String.format("[%s] [%s] [%s] %s", timestamp, level, source, message);
+        logStream.println(logEntry);
+        logStream.flush();
+    }
+
+
 
     public static class MultiOutputStream extends OutputStream {
         public final OutputStream[] outputStreams;
@@ -88,22 +121,6 @@ public class LogFile {
             for (OutputStream os : outputStreams) {
                 os.close();
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            System.out.println("Start typing your input:");
-            String line;
-            while ((line = reader.readLine()) != null) {
-                synchronized (currentInput) {
-                    currentInput.append(line).append("\n");
-                }
-            }
-        } catch (IOException e) {
-            Logger.error("LogFile", "Error reading user input: " + e.getMessage());
-        } finally {
-            executor.shutdown();
         }
     }
 }

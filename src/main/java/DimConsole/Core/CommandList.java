@@ -34,6 +34,8 @@ public class CommandList {
         commandMap.put("net", net::main);
         commandMap.put("network", net::main);
         commandMap.put("why", oshiTest::main);
+        commandMap.put("reload", reload::main);
+        commandMap.put("messagebox", MessageBox::main);
     }
 
     // Method to execute a command based on input

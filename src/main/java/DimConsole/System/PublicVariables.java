@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class  PublicVariables {
 
-    public static String VersionNum = "1.0.0.0038";
+    public static String VersionNum = "1.2.0.0057";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");

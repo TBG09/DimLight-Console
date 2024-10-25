@@ -1,6 +1,7 @@
 package DimConsole.Core;
 
 import DimConsole.CoreFunc.FileFormat;
+import DimConsole.System.ExecuteSysCommands;
 import DimConsole.System.PublicVariables;
 
 import java.util.Scanner;
@@ -30,10 +31,20 @@ public class Main {
 
     public static void UserInput() throws Exception {
         Scanner scanner = new Scanner(System.in);
-        System.out.print(PublicVariables.currentDirectory + " >");
+        System.out.print(PublicVariables.currentDirectory + ">");
         String[] inputParts = scanner.nextLine().split(" ", 2);
         String command = inputParts[0];
 
+        if (command.toLowerCase().contains(".jar".toLowerCase())) {
+            if (ExecuteSysCommands.verifyCommand("java -version")) {
+                System.out.println("");
+                ExecuteSysCommands.executeCommand("java -jar " + command);
+                UserInput();
+            } else {
+                System.out.println("Java isn't in da path:(");
+                UserInput();
+            }
+        }
 
         if (command.toLowerCase().contains(".dimc".toLowerCase())) {
             FileFormat.main(new String[]{command});
@@ -42,6 +53,7 @@ public class Main {
             CommandList commandList = new CommandList();
             commandList.executeCommand(command, arguments);
         }
+
     }
 
 }

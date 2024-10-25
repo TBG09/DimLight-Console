@@ -154,17 +154,23 @@ public class IOHandler {
             }
         }
 
-        public  boolean isFileEmpty(String filePath) {
+        public boolean isFileEmpty(String filePath) {
+            // Check if the provided filePath is null
+            if (filePath == null) {
+                return false; // Or handle this as you see fit, such as throwing an exception
+            }
+
             File file = new File(filePath);
 
             // Check if file exists
             if (!file.exists()) {
-                return false;
+                return false; // File does not exist, so it can't be empty
             }
 
             // Check if file is empty
-            return file.length() == 0;
+            return file.length() == 0; // Return true if file length is 0
         }
+
 
         public void ReadOnlyChange(String objectName,Boolean ReadOnlyToggle) {
             myObj = new File(objectName);
