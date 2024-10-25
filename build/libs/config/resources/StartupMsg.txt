@@ -5,3 +5,4 @@ Fun fact: this is a console app.
 Fun fact: this is not a gui app, although it has a messagebox command to show a messagebox...
 Linux = Better, Windows = more compatibility
 If I knew how to get JavaFX working, I wouldn't of used Swing for the messagebox.
+Hmmmmmmmmmmmmmmmmmmmmmmmmmmm
