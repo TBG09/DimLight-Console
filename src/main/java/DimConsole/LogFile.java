@@ -31,7 +31,7 @@ public class LogFile {
             }
 
             // Create a log file with the current date and time
-            String logFileName = LOG_FILE_PREFIX + new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date()) + LOG_FILE_SUFFIX;
+            String logFileName = LOG_FILE_PREFIX + new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss.SSS").format(new Date()) + LOG_FILE_SUFFIX;
             File logFile = new File(logDir, logFileName);
 
             // Save the original System.out and System.err
@@ -87,7 +87,7 @@ public class LogFile {
 
     // Centralized logging method with source parameter
     private static void log(String source, String level, String message) {
-        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
         String logEntry = String.format("[%s] [%s] [%s] %s", timestamp, level, source, message);
         logStream.println(logEntry);
         logStream.flush();

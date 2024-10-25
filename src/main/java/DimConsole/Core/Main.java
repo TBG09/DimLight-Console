@@ -1,6 +1,7 @@
 package DimConsole.Core;
 
 import DimConsole.CoreFunc.FileFormat;
+import DimConsole.CoreFunc.FirstTimeStart;
 import DimConsole.CoreFunc.StartupMessage;
 import DimConsole.System.ExecuteSysCommands;
 import DimConsole.System.PublicVariables;
@@ -11,15 +12,23 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         StartupJobs.main();
+        if (PublicVariables.FirstTimeStart == false) {
+            // FirstTimeStart.main(); -- WHYYY, just work java, i don't need your stupid errors.
+        } else {
+            // N O T H I N G
+        }
+
 
         System.out.println("DimLight Console - " + PublicVariables.VersionNum);
         if (PublicVariables.LinuxDistro == "Unknown Linux Distro" && PublicVariables.osType.toLowerCase().contains("win")) {
             System.out.println("Running on " + PublicVariables.osType);
         } else if (PublicVariables.runningOnTermux){
-           System.out.println("Running on termux with Linux " + PublicVariables.osVersion);
+            System.out.println("Running on termux with Linux " + PublicVariables.osVersion);
         } else {
             System.out.println("Running on " + PublicVariables.LinuxDistro);
         }
+
+
         System.out.println("Welcome!");
         StartupMessage.main();
 

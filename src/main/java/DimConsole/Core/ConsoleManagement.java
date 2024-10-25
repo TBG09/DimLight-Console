@@ -25,10 +25,4 @@ public class ConsoleManagement {
             e.printStackTrace();
         }
     }
-
-    public  void main(String[] args) {
-
-        clearConsole("why: idk");
-        Logger.info("ConsoleManagement","Cleared Console!");
-    }
 }

@@ -1,22 +1,24 @@
 package DimConsole.System;
 
+import DimConsole.Core.IOHandler;
+import DimConsole.CoreFunc.Config;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.security.interfaces.RSAMultiPrimePrivateCrtKey;
 
 
 public class  PublicVariables {
 
-    public static String VersionNum = "1.2.0.0060";
+    public static String VersionNum = "1.2.0.0077";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");
     public static String osVersion = System.getProperty("os.version");
     public static boolean isDevVer = true;
     public static boolean runningOnTermux = isRunningOnTermux();
-    public static String ResourcePath = "resources";
+    public static String ResourceDir = "config/resources/";
     public static String SeperatorOSType = SeperatorType();
     public static String totalMemoryGB = String.valueOf((long) Runtime.getRuntime().totalMemory() / (1024 * 1024 * 1024));
     public static String totalMemoryMB = String.valueOf((long) Runtime.getRuntime().totalMemory() / (1024 * 1024));
@@ -26,12 +28,25 @@ public class  PublicVariables {
     public static String Username = System.getProperty("user.name");
     public static String RootType = RootType();
     public static String HomeDir = System.getProperty("user.home");
-
+    public static String StartupMsgURL = ("https://raw.githubusercontent.com/TBG09/DimLight-Console/refs/heads/main/build/libs/config/resources/StartupMsg.txt");
+    public static boolean FirstTimeStart = FirstTimeSetup();
 
 
     private static boolean isRunningOnTermux() {
         File termuxFile = new File("/data/data/com.termux/files/home/.termux");
         return termuxFile.exists() && termuxFile.isDirectory();
+    }
+
+    private static boolean FirstTimeSetup() {
+        IOHandler.IO io = new IOHandler.IO();
+        boolean ReadJSONReturnString = false;
+        String FirstReadJSON = Config.getConfigValue("FirstTimeSetup", "Stop");
+        if (FirstReadJSON.toLowerCase().contains(FirstReadJSON)) {
+            ReadJSONReturnString = true;
+        } else {
+            ReadJSONReturnString = false;
+        }
+        return ReadJSONReturnString;
     }
 
     private static String RootType() {

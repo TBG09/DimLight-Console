@@ -4,4 +4,6 @@
     "LogDir": "logs"
     ,"StartupMessageFile": "config-resources-StartupMsg.txt"
     ,"DefaultDir": ""
+    ,"Username": ""
+    ,"FirstTimeSetup": false
 }

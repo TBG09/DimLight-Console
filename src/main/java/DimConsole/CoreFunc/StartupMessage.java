@@ -11,7 +11,7 @@ import DimConsole.System.PublicVariables;
 public class StartupMessage {
     public static void main() {
         // Specify the path to the Startup.txt file
-        String path = "config" + PublicVariables.SeperatorOSType + "resources" + PublicVariables.SeperatorOSType + "StartupMsg.txt";
+        String path = "config/resources/StartupMsg.txt";
 
         // Read lines from the file
         List<String> lines = readLinesFromFile(path);
@@ -28,7 +28,7 @@ public class StartupMessage {
         String randomMessage = lines.get(randomIndex).trim(); // Get the message and trim whitespace
 
         // Print the random message
-        System.out.println(randomMessage);
+        System.out.println("Message for this startup:" + randomMessage);
     }
 
     private static List<String> readLinesFromFile(String path) {
