@@ -1,3 +1,5 @@
 Meep? Meep? MEEEEEEEEEEEEEEEP
 Why do i do this?
 Fun fact: this is a console app.
+1.5k Lines of code, not really impressive, but its something.
+Fun fact: this is not a gui app, although it has a messagebox command to show a messagebox...
