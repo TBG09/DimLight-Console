@@ -15,7 +15,9 @@ public class help {
                 rename or ren - renames the specified file.
                 rm or remove - removes the folder or file.
                 wait <seconds> - waits the amount of seconds given.
-                net <sub command> - do net help if you want help lol.""");
+                net <sub command> - do net help if you want help lol.
+                reload - reloads the config
+                messagebox - allows you to create your own message boxes, do help as an argument if you dont know how to use it.""");
     }
 
 }
