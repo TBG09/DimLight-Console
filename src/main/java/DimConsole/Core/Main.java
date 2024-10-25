@@ -1,6 +1,7 @@
 package DimConsole.Core;
 
 import DimConsole.CoreFunc.FileFormat;
+import DimConsole.CoreFunc.StartupMessage;
 import DimConsole.System.ExecuteSysCommands;
 import DimConsole.System.PublicVariables;
 
@@ -20,7 +21,7 @@ public class Main {
             System.out.println("Running on " + PublicVariables.LinuxDistro);
         }
         System.out.println("Welcome!");
-
+        StartupMessage.main();
 
 
         UserInput();

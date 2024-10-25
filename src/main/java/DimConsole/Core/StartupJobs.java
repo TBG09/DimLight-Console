@@ -31,6 +31,8 @@ public class StartupJobs {
                     "PathVariables": [],
                     "EnvVariables": [],
                     "LogDir": "logs"
+                    ,"StartupMessageFile": "config-resources-StartupMsg.txt"
+                    ,"DefaultDir": ""
                 }
                 """);
         }

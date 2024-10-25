@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.interfaces.RSAMultiPrimePrivateCrtKey;
 
 
 public class  PublicVariables {
 
-    public static String VersionNum = "1.2.0.0057";
+    public static String VersionNum = "1.2.0.0060";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");
@@ -22,12 +23,26 @@ public class  PublicVariables {
     public static String totalMemoryKB = String.valueOf((long) Runtime.getRuntime().totalMemory());
     public static String currentDirectory = System.getProperty("user.dir");
     public static String LinuxDistro = getLinuxDistro();
+    public static String Username = System.getProperty("user.name");
+    public static String RootType = RootType();
+    public static String HomeDir = System.getProperty("user.home");
 
 
 
     private static boolean isRunningOnTermux() {
         File termuxFile = new File("/data/data/com.termux/files/home/.termux");
         return termuxFile.exists() && termuxFile.isDirectory();
+    }
+
+    private static String RootType() {
+        String root;
+        if (osType.toLowerCase().contains("win")) {
+            root = "C:";
+
+        } else {
+            root = "/";
+        }
+        return root;
     }
 
     private static String SeperatorType() {
