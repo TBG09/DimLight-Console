@@ -1,6 +1,7 @@
 package DimConsole.Core;
 
 
+import DimConsole.LogFile;
 import DimConsole.Logger;
 
 import java.io.File;
@@ -8,10 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +29,7 @@ public class IOHandler {
                 Logger.fatal("IOHandler", "An error occurred while trying to create your file: " + e);
             }
         }
+
 
         public List<String> readLines(String filePath) {
             try {
@@ -75,10 +74,32 @@ public class IOHandler {
             return content.toString(); // Return the accumulated content as a String
         }
 
+        public void copy(String sourcePath, String destinationPath) {
+            try {
+                Path source = Paths.get(sourcePath);
+                Path destination = Paths.get(destinationPath);
+                Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+                LogFile.Hinfo("IOHandler", "File copied from " + sourcePath + " to " + destinationPath + " successfully!");
+            } catch (IOException e) {
+                LogFile.Hfatal("IOHandler", "An error occurred while copying the file: " + e);
+            }
+        }
+
+        public void move(String sourcePath, String destinationPath) {
+            try {
+                Path source = Paths.get(sourcePath);
+                Path destination = Paths.get(destinationPath);
+                Files.move(source, destination, StandardCopyOption.REPLACE_EXISTING);
+                LogFile.Hinfo("IOHandler", "File moved from " + sourcePath + " to " + destinationPath + " successfully!");
+            } catch (IOException e) {
+                Logger.fatal("IOHandler", "An error occurred while moving the file: " + e);
+            }
+        }
+
         public void FileSize(String unit, String filePath) {
             File file = new File(filePath);
             if (!file.exists()) {
-                Logger.error("IOHandler", "File does not exist: " + filePath);
+                LogFile.Herror("IOHandler", "File does not exist: " + filePath);
                 System.exit(1);
             }
 
