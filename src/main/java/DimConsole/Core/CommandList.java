@@ -36,6 +36,12 @@ public class CommandList {
         commandMap.put("why", oshiTest::main);
         commandMap.put("reload", reload::main);
         commandMap.put("messagebox", MessageBox::main);
+        commandMap.put("mv", mv::main);
+        commandMap.put("move", mv::main);
+        commandMap.put("cp", cp::main);
+        commandMap.put("copy", cp::main);
+        commandMap.put("hash", hash::main);
+        commandMap.put("touch", touch::main);
     }
 
     // Method to execute a command based on input

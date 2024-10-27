@@ -9,7 +9,7 @@ public class mkdir {
             io.CreateDirectory(FolderName);
             System.out.println("Directory " + FolderName + "Created.");
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("Failed to create directory: " + e.getMessage());
         }
 
 

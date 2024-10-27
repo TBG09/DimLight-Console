@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.learn.java"
-version = "1.2.0.0077"
+version = "1.2.0.0079"
 
 repositories {
     mavenCentral()
@@ -17,6 +17,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.18.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.18.0")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.0")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.70")
 }
 
 tasks.jar {

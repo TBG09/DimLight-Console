@@ -17,7 +17,11 @@ public class help {
                 wait <seconds> - waits the amount of seconds given.
                 net <sub command> - do net help if you want help lol.
                 reload - reloads the config
-                messagebox - allows you to create your own message boxes, do help as an argument if you dont know how to use it.""");
+                messagebox - allows you to create your own message boxes, do help as an argument if you dont know how to use it.
+                cp <file or folder> <destination folder> - copies files or folders
+                mv - <file or folder> <destination folder> - moves files or folders
+                touch <filename> - creates empty files
+                hash - hashing, do help as a subcommand for more info.""");
     }
 
 }
