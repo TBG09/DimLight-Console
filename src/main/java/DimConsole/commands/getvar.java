@@ -10,7 +10,6 @@ import java.lang.reflect.Modifier;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.jar.JarEntry;
@@ -151,10 +150,13 @@ public class getvar {
 
     private static String getJarName() {
         try {
-            // Retrieve the JAR name from the PublicVariables class
-            Field field = PublicVariables.class.getField("JARName");
-            return (String) field.get(null);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            // Retrieve the JAR name dynamically
+            File jarFile = new File(getvar.class.getProtectionDomain()
+                    .getCodeSource()
+                    .getLocation()
+                    .getPath());
+            return jarFile.getName();
+        } catch (Exception e) {
             System.out.println("Error retrieving JAR name: " + e.getMessage());
             return null; // Or return a default path if needed
         }

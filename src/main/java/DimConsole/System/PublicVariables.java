@@ -30,7 +30,6 @@ public class  PublicVariables {
     public static String HomeDir = System.getProperty("user.home");
     public static String StartupMsgURL = ("https://raw.githubusercontent.com/TBG09/DimLight-Console/refs/heads/main/build/libs/config/resources/StartupMsg.txt");
     public static boolean FirstTimeStart = FirstTimeSetup();
-    public static String JARName = "DimLight-Console-1.2.0.0092-all.jar";
 
 
     private static boolean isRunningOnTermux() {
