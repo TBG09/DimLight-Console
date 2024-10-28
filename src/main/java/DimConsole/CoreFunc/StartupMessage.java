@@ -28,7 +28,7 @@ public class StartupMessage {
         String randomMessage = lines.get(randomIndex).trim(); // Get the message and trim whitespace
 
         // Print the random message
-        System.out.println("Message for this startup:" + randomMessage);
+        System.out.println("Message for this startup: " + randomMessage);
     }
 
     private static List<String> readLinesFromFile(String path) {

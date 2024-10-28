@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class  PublicVariables {
 
-    public static String VersionNum = "1.2.0.0079";
+    public static String VersionNum = "1.2.0.0091";
     public static String osType = System.getProperty("os.name").toLowerCase();
     public static String javaVer = System.getProperty("java.version");
     public static String deviceArch = System.getProperty("os.arch");
@@ -30,6 +30,7 @@ public class  PublicVariables {
     public static String HomeDir = System.getProperty("user.home");
     public static String StartupMsgURL = ("https://raw.githubusercontent.com/TBG09/DimLight-Console/refs/heads/main/build/libs/config/resources/StartupMsg.txt");
     public static boolean FirstTimeStart = FirstTimeSetup();
+    public static String JARName = "DimLight-Console-1.2.0.0092-all.jar";
 
 
     private static boolean isRunningOnTermux() {

@@ -40,8 +40,8 @@ public class CommandList {
         commandMap.put("move", mv::main);
         commandMap.put("cp", cp::main);
         commandMap.put("copy", cp::main);
-        commandMap.put("hash", hash::main);
         commandMap.put("touch", touch::main);
+        commandMap.put("find", find::main);
     }
 
     // Method to execute a command based on input

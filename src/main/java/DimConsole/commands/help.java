@@ -21,7 +21,7 @@ public class help {
                 cp <file or folder> <destination folder> - copies files or folders
                 mv - <file or folder> <destination folder> - moves files or folders
                 touch <filename> - creates empty files
-                hash - hashing, do help as a subcommand for more info.""");
+                find - finds, stuff, just do help as a subcommand.""");
     }
 
 }
